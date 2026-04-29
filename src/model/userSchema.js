@@ -21,7 +21,7 @@ const UserSchema = new mongoose.Schema({
 
 const adminSchema = new mongoose.Schema({
     "username" : String,
-    "passoword" : String,
+    "password" : String,
     "courseCreated" : [
         {
             "type" : mongoose.Schema.Types.ObjectId,
@@ -34,13 +34,14 @@ const adminSchema = new mongoose.Schema({
 const courseSchema = new mongoose.Schema({
     "title": String,
     "description" : String,
-    "price" : Number
+    "price" : Number,
+    "imagelink" : String
 })
 
 
 const userModel = new mongoose.model('users' , UserSchema);
 
-const adminModel = new mongoose.model('admin' , adminSchema);
+const adminModel = new mongoose.model('admins' , adminSchema);
 
 const courseModel = new mongoose.model('courses' , courseSchema);
 
